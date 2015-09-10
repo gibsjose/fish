@@ -6,14 +6,14 @@ function fish_prompt --description 'Write out the prompt'
 	end
 
 	# PWD
-	set_color $fish_color_cwd
-	echo -n (prompt_pwd)
-	set_color normal
+	# set_color $fish_color_cwd
+	# echo -n (prompt_pwd)
+	# set_color normal
 
-	printf '%s ' (__fish_git_prompt)
+	printf '-%s ' (__fish_git_prompt)
 
 	if not test $last_status -eq 0
-	set_color $fish_color_error
+		set_color $fish_color_error
 	end
 
 	echo -n '$ '
