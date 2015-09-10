@@ -1,0 +1,5 @@
+# PATH
+set -g -x PATH /usr/local/bin $PATH
+
+# Suppress Greeting
+set -g -x fish_greeting ''
