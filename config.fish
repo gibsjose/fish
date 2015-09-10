@@ -4,6 +4,9 @@ set -g -x PATH /usr/local/bin $PATH
 # Suppress Greeting
 set -g -x fish_greeting ''
 
+# Load custom functions
+source ~/.config/fish/functions/utilities.fish
+
 # Paths to your tackle
 set tacklebox_path ~/.tackle ~/.tacklebox
 
