@@ -1,5 +1,24 @@
 # PATH
 set -g -x PATH /usr/local/bin $PATH
+### User Binaries
+set -g -x PATH ~/bin $PATH
+### General Coding Tools (clang, avr, etc.)
+set -g -x PATH ~/bin/clang-analyzer ~/bin/avr $PATH
+### Todo Python script
+set -g -x PATH ~/bin/todo $PATH
+### Utilities
+set -g -x PATH ~/bin/utilities $PATH
+### ROOT
+set -g -x PATH /usr/local/root/bin $PATH
+### Add RVM to PATH for scripting
+set -g -x PATH $HOME/.rvm/bin $PATH
+### Rocket
+set -g -x PATH ~/bin/rocket/bin $PATH
+### Go
+set -g -x GOPATH $HOME/go
+set -g -x PATH $GOPATH $GOPATH/bin $PATH
+set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
+
 
 # Suppress Greeting
 set -g -x fish_greeting ''
