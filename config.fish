@@ -23,6 +23,10 @@ set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
 # Suppress Greeting
 set -g -x fish_greeting ''
 
+# Colourize `less`
+alias 'less' 'less -RN' #Enable colour and line numbers
+set -gx LESSOPEN '| /usr/local/Cellar/source-highlight/3.1.8/bin/src-hilite-lesspipe.sh %s' # Pipes the output of the `source-highlight` less utility to less rather than the raw file
+
 # Load custom functions
 source ~/.config/fish/functions/utilities.fish
 
@@ -41,4 +45,4 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 # Example format: set tacklebox_plugins python extract
 
 # Load Tacklebox configuration
-. ~/.tacklebox/tacklebox.fish
+# . ~/.tacklebox/tacklebox.fish
