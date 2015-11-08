@@ -19,7 +19,6 @@ set -g -x GOPATH $HOME/go
 set -g -x PATH $GOPATH $GOPATH/bin $PATH
 set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
 
-
 # Suppress Greeting
 set -g -x fish_greeting ''
 
@@ -29,6 +28,9 @@ set -gx LESSOPEN '| /usr/local/Cellar/source-highlight/3.1.8/bin/src-hilite-less
 
 # Load custom functions
 source ~/.config/fish/functions/utilities.fish
+
+# Load GitHub API Tokens
+source ~/.config/fish/tokens/github.fish
 
 # Paths to your tackle
 set tacklebox_path ~/.tackle ~/.tacklebox
