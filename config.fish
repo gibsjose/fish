@@ -8,6 +8,8 @@ set -g -x PATH ~/bin/clang-analyzer ~/bin/avr $PATH
 set -g -x PATH ~/bin/todo $PATH
 ### Utilities
 set -g -x PATH ~/bin/utilities $PATH
+### Git Merge/Diff Tools
+set -g -x PATH ~/bin/git-tools $PATH
 ### ROOT
 set -g -x PATH /usr/local/root/bin $PATH
 ### Add RVM to PATH for scripting
