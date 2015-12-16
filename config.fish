@@ -6,6 +6,8 @@ set -g -x PATH ~/bin $PATH
 set -g -x PATH ~/bin/clang-analyzer ~/bin/avr $PATH
 ### Todo Python script
 set -g -x PATH ~/bin/todo $PATH
+### Pipsi
+set -g -x PATH ~/.local/bin $PATH
 ### Utilities
 set -g -x PATH ~/bin/utilities $PATH
 ### Git Merge/Diff Tools
