@@ -22,6 +22,8 @@ set -g -x PATH ~/bin/rocket/bin $PATH
 set -g -x GOPATH $HOME/go
 set -g -x PATH $GOPATH $GOPATH/bin $PATH
 set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
+### MacTeX (pdflatex, etc.)
+set -g -x PATH /Library/TeX/texbin $PATH
 
 # Suppress Greeting
 set -g -x fish_greeting ''
