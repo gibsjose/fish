@@ -25,6 +25,10 @@ set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
 ### MacTeX (pdflatex, etc.)
 set -g -x PATH /Library/TeX/texbin $PATH
 
+# Brew Cask Options
+set -g -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
+
+
 # Suppress Greeting
 set -g -x fish_greeting ''
 
