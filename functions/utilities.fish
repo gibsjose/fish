@@ -21,3 +21,16 @@ end
 function ltr
     ls -ltr $argv
 end
+
+# Get the size of a file in human readable format
+function fsize
+	ls -lah $argv | awk '{print $5}'
+end
+
+function file-size
+    fsize $argv
+end
+
+function sizeof
+    fsize $argv
+end
