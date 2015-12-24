@@ -24,10 +24,10 @@ end
 
 # `sizeof`: get the size of a file/directory in human readable format
 function sizeof
-    if not test -d $argv
-        filesize $argv
-    else
+    if test -d $argv
         dirsize $argv
+    else
+        filesize $argv
     end
 end
 
