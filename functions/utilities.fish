@@ -22,15 +22,19 @@ function ltr
     ls -ltr $argv
 end
 
-# Get the size of a file in human readable format
-function fsize
-	ls -lah $argv | awk '{print $5}'
-end
-
-function file-size
-    fsize $argv
-end
-
+# `sizeof`: get the size of a file/directory in human readable format
 function sizeof
-    fsize $argv
+    if not test -d $argv
+        filesize $argv
+    else
+        dirsize $argv
+    end
+end
+
+function filesize
+    ls -lah $argv | awk '{print $5}'
+end
+
+function dirsize
+    du -sh $argv | awk '{print $1}'
 end
