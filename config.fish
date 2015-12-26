@@ -25,6 +25,9 @@ set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
 ### MacTeX (pdflatex, etc.)
 set -g -x PATH /Library/TeX/texbin $PATH
 
+### Hashcat base directory
+set -g -x HASHCAT '/opt/homebrew-cask/Caskroom/hashcat/2.00/hashcat-2.00'
+
 # Brew Cask Options
 set -g -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
 
