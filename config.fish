@@ -31,6 +31,8 @@ set -g -x HASHCAT '/opt/homebrew-cask/Caskroom/hashcat/2.00/hashcat-2.00'
 # Brew Cask Options
 set -g -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
 
+# Set Editor
+set -g -x EDITOR '/usr/local/bin/atom -w'
 
 # Suppress Greeting
 set -g -x fish_greeting ''
