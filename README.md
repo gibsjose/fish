@@ -3,7 +3,7 @@
 ## Install
 Clone this repository into `~/.config/fish/`:
 ```bash
-git clone git@github.com:gibsjose/fish ~/.config/fish
+git clone https://github.com/gibsjose/fish ~/.config/fish
 ```
 
 To set `fish` as the default shell, first add it to the list of acceptable shells:
