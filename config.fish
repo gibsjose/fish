@@ -39,9 +39,10 @@ set -g -x EDITOR '/usr/local/bin/atom -w'
 # Suppress Greeting
 set -g -x fish_greeting ''
 
+# @TODO broken now... something happened with an updated boost library
 # Colourize `less`
-alias 'less' 'less -RN' #Enable colour and line numbers
-set -gx LESSOPEN '| /usr/local/Cellar/source-highlight/3.1.8/bin/src-hilite-lesspipe.sh %s' # Pipes the output of the `source-highlight` less utility to less rather than the raw file
+# alias 'less' 'less -RN' #Enable colour and line numbers
+# set -gx LESSOPEN '| /usr/local/Cellar/source-highlight/3.1.8/bin/src-hilite-lesspipe.sh %s' # Pipes the output of the `source-highlight` less utility to less rather than the raw file
 
 # Load aliases
 source ~/.config/fish/aliases/aliases.fish
