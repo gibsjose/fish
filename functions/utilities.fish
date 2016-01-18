@@ -38,3 +38,8 @@ end
 function dirsize
     du -sh $argv | awk '{print $1}'
 end
+
+# Fuck
+function fuck
+    eval (thefuck --alias | tr '\n' ';')
+end
