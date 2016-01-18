@@ -41,9 +41,9 @@ function fish_prompt --description 'Write out the prompt'
 	# set_color normal
 
 	# Check if git repository
-	if git status ^/dev/null > /dev/null; 
+	if git status ^/dev/null > /dev/null;
 		set_color 3692dd
-		echo -n '𝜆'
+		echo -n 'λ'
 		set_color normal
 
 		printf '%s ' (__fish_git_prompt)
