@@ -14,6 +14,8 @@ set -g -x PATH ~/bin/todo $PATH
 
 ### General Coding Tools (clang, avr, etc.)
 set -g -x PATH ~/bin/clang-analyzer ~/bin/avr $PATH
+### Arduino IDE's AVR Toolchain
+set -g -x PATH '/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin' $PATH
 ### Pipsi
 set -g -x PATH ~/.local/bin $PATH
 ### ROOT
