@@ -12,8 +12,13 @@ set -g -x PATH ~/bin/rocket/bin $PATH
 ### Todo Python script
 set -g -x PATH ~/bin/todo $PATH
 
-### General Coding Tools (clang, avr, etc.)
-set -g -x PATH ~/bin/clang-analyzer ~/bin/avr $PATH
+### AVR Toolchain
+set -g -x PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/ $PATH
+# set -g -x PATH ~/bin/avr $PATH
+set -g -x CPATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/avr/include $CPATH
+
+### General Coding Tools (clang, etc.)
+set -g -x PATH ~/bin/clang-analyzer $PATH
 ### Pipsi
 set -g -x PATH ~/.local/bin $PATH
 ### ROOT
