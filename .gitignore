@@ -4,3 +4,6 @@ fish_read_history
 
 # Ignore GitHub API Tokens (can't push to GH)
 tokens/
+
+#Ignore fishd* since these are generated with a new hash on each machine
+fishd*
