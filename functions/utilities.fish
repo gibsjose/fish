@@ -22,6 +22,11 @@ function ltr
     ls -ltr $argv
 end
 
+# `emacs` wrapper
+function emacsclient
+    ec $argv
+end
+
 # `sizeof`: get the size of a file/directory in human readable format
 function sizeof
     if test -d $argv
