@@ -22,6 +22,10 @@ function ltr
     ls -ltr $argv
 end
 
+function pld
+    pwd; ls $argv
+end
+
 # `emacs` wrapper
 function emacsclient
     ec $argv
