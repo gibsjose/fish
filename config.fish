@@ -13,9 +13,8 @@ set -g -x PATH ~/bin/rocket/bin $PATH
 set -g -x PATH ~/bin/todo $PATH
 
 ### AVR Toolchain
-set -g -x PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/ $PATH
-# set -g -x PATH ~/bin/avr $PATH
-set -g -x CPATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/avr/include $CPATH
+#### Postfixing this to PATH so it searches this last
+set -g -x PATH $PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/
 
 ### General Coding Tools (clang, etc.)
 set -g -x PATH ~/bin/clang-analyzer $PATH
