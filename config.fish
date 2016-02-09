@@ -29,6 +29,9 @@ set -g -x PATH $HOME/.rvm/bin $PATH
 set -g -x GOPATH $HOME/go
 set -g -x PATH $GOPATH $GOPATH/bin $PATH
 set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
+# @TODO Cannot source a bash file from fish...
+# source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
+
 ### MacTeX (pdflatex, etc.)
 set -g -x PATH /Library/TeX/texbin $PATH
 
