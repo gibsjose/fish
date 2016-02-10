@@ -3,9 +3,11 @@ function microamps
     ssh -o ServerAliveInterval=20 -c blowfish -i ~/.ssh/microamps microamps@microamps.ydns.eu $argv
 end
 
-# Setup Improved Git Log
-function setup-git-log
+# Setup Improved Git Environment
+function setup-git
     git config --global alias.ls "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+    git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
 end
 
 # `s` aliases
