@@ -22,8 +22,8 @@ function ltr
     ls -ltr $argv
 end
 
-function pld
-    pwd; ls $argv
+function pls
+    pwd; echo; ls $argv
 end
 
 # `emacs` wrapper
