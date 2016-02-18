@@ -3,6 +3,8 @@ set -g -x PATH /usr/local/bin $PATH
 
 ### User Binaries
 set -g -x PATH ~/bin $PATH
+### Coverity
+set -g -x PATH ~/bin/cov-analysis/bin $PATH
 ### Utilities
 set -g -x PATH ~/bin/bash-utilities $PATH
 ### Git Merge/Diff Tools
