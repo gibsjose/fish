@@ -3,32 +3,11 @@ function reload
     source ~/.config/fish/config.fish
 end
 
-# `grep` Wrapper: colour
-function grep
-    command grep --color=auto $argv
-end
+# Setup Improved Git Environment
+function setup-git
+    git config --global alias.ls "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-# `ls` Wrapper: colour and human-readable sizes
-function ls
-    command ls -hG $argv
-end
-
-# `ls` helper functions
-function la
-    ls -la $argv
-end
-
-function ltr
-    ls -ltr $argv
-end
-
-function pls
-    pwd; echo; ls $argv
-end
-
-# `emacs` wrapper
-function emacsclient
-    ec $argv
+    git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
 end
 
 # `sizeof`: get the size of a file/directory in human readable format
