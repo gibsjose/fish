@@ -23,6 +23,39 @@ function pls
     pwd; echo; ls $argv
 end
 
+# Push/Pop Directories
+function pud
+    pushd $argv
+end
+function d
+    pud $argv
+end
+
+function pod
+    popd $argv
+end
+function p
+    pod $argv
+end
+
+# Tree
+function tree
+    command tree -C --noreport $argv
+end
+
+function t --argument-names 'level'
+
+    if test -n "$level"
+        tree -L "$level"
+    else
+        tree -L 1
+    end
+end
+
+function pt
+    pwd; t
+end
+
 # `emacs` wrapper
 function emacsclient
     ec $argv
