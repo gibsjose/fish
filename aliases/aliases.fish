@@ -61,11 +61,6 @@ function emacsclient
     ec $argv
 end
 
-# Microamps Blog SSH
-function microamps
-    ssh -o ServerAliveInterval=20 -c blowfish -i ~/.ssh/microamps microamps@microamps.ydns.eu $argv
-end
-
 # `s` aliases
 function search
     s $argv
