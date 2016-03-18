@@ -9,5 +9,5 @@ end
 
 # NASA Sunlight
 function sunlight
-    ssh -o ServerAliveInterval=20 -c blowfish -i ~/.ssh/sunlight jjgibso2@gs408-sunlight.ndc.nasa.gov $argv
+    ssh -o ServerAliveInterval=20 -i ~/.ssh/sunlight jjgibso2@gs408-sunlight.ndc.nasa.gov $argv
 end
