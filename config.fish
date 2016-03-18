@@ -53,11 +53,17 @@ set -g -x fish_greeting ''
 # alias 'less' 'less -RN' #Enable colour and line numbers
 # set -gx LESSOPEN '| /usr/local/Cellar/source-highlight/3.1.8/bin/src-hilite-lesspipe.sh %s' # Pipes the output of the `source-highlight` less utility to less rather than the raw file
 
-# Load aliases
-source ~/.config/fish/aliases/aliases.fish
+# Source aliases
+for f in (find ~/.config/fish/aliases/*.fish)
+    source $f
+end
 
-# Load custom functions
-source ~/.config/fish/functions/utilities.fish
+# Source custom functions
+for f in (find ~/.config/fish/functions/*.fish)
+    source $f
+end
 
-# Load GitHub API Tokens
-source ~/.config/fish/tokens/github.fish
+# Source API Tokens
+for f in (find ~/.config/fish/tokens/*.fish)
+    source $f
+end
