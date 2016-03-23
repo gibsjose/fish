@@ -16,7 +16,7 @@ set -g -x PATH ~/bin/todo $PATH
 
 ### AVR Toolchain
 #### Postfixing this to PATH so it searches this last
-set -g -x PATH $PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/
+set -g -x PATH $PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin
 
 ### General Coding Tools (clang, etc.)
 set -g -x PATH ~/bin/clang-analyzer $PATH
