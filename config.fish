@@ -3,14 +3,8 @@ set -g -x PATH /usr/local/bin $PATH
 
 ### User Binaries
 set -g -x PATH ~/bin $PATH
-### Coverity
-set -g -x PATH ~/bin/cov-analysis/bin $PATH
 ### Utilities
 set -g -x PATH ~/bin/bash-utilities $PATH
-### Git Merge/Diff Tools
-set -g -x PATH ~/bin/git-tools $PATH
-### Rocket
-set -g -x PATH ~/bin/rocket/bin $PATH
 ### Todo Python script
 set -g -x PATH ~/bin/todo $PATH
 
@@ -18,26 +12,8 @@ set -g -x PATH ~/bin/todo $PATH
 #### Postfixing this to PATH so it searches this last
 set -g -x PATH $PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin
 
-### General Coding Tools (clang, etc.)
-set -g -x PATH ~/bin/clang-analyzer $PATH
-### Pipsi
-set -g -x PATH ~/.local/bin $PATH
-### ROOT
-set -g -x PATH /usr/local/root/bin $PATH
-### Add RVM to PATH for scripting
-set -g -x PATH $HOME/.rvm/bin $PATH
-### Go
-set -g -x GOPATH $HOME/go
-set -g -x PATH $GOPATH $GOPATH/bin $PATH
-set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
-# @TODO Cannot source a bash file from fish...
-# source $GOPATH/src/github.com/zquestz/s/autocomplete/s-completion.bash
-
 ### MacTeX (pdflatex, etc.)
 set -g -x PATH /Library/TeX/texbin $PATH
-
-### Hashcat base directory
-set -g -x HASHCAT '/opt/homebrew-cask/Caskroom/hashcat/2.00/hashcat-2.00'
 
 # Brew Cask Options
 set -g -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
@@ -47,11 +23,6 @@ set -g -x EDITOR '/usr/local/bin/atom -w'
 
 # Suppress Greeting
 set -g -x fish_greeting ''
-
-# @TODO broken now... something happened with an updated boost library
-# Colourize `less`
-# alias 'less' 'less -RN' #Enable colour and line numbers
-# set -gx LESSOPEN '| /usr/local/Cellar/source-highlight/3.1.8/bin/src-hilite-lesspipe.sh %s' # Pipes the output of the `source-highlight` less utility to less rather than the raw file
 
 # Source aliases
 for f in (find ~/.config/fish/aliases/*.fish)
@@ -64,6 +35,6 @@ for f in (find ~/.config/fish/functions/*.fish)
 end
 
 # Source API Tokens
-for f in (find ~/.config/fish/tokens/*.fish)
-    source $f
-end
+# for f in (find ~/.config/fish/tokens/*.fish)
+#     source $f
+# end

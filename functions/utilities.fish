@@ -20,16 +20,11 @@ function sizeof
 end
 
 function filesize
-    ls -lah $argv | awk '{print $5}'
+    ls -laho $argv | awk '{print $4}'
 end
 
 function dirsize
     du -sh $argv | awk '{print $1}'
-end
-
-# Fuck
-function fuck
-    eval (thefuck --alias | tr '\n' ';')
 end
 
 # Transfer
