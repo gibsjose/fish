@@ -3,6 +3,8 @@ set -g -x PATH /usr/local/bin $PATH
 
 ### User Binaries
 set -g -x PATH ~/bin $PATH
+### Git HFCS
+set -g -x PATH ~/bin/util.git-hfcs $PATH
 ### Utilities
 set -g -x PATH ~/bin/bash-utilities $PATH
 ### Todo Python script
