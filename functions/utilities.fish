@@ -5,9 +5,9 @@ end
 
 # Setup Improved Git Environment
 function setup-git
-    git config --global alias.ls "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-    git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
+    git config --global alias.ls "log --color --graph --pretty=format:'%Cred%h%Creset -%C(blue)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    
+    git config --global alias.sl "stash list --pretty=format:'%C(bold blue)%gd%Cred: %C(reset)%s'"
 end
 
 # `sizeof`: get the size of a file/directory in human readable format
