@@ -40,3 +40,6 @@ end
 # for f in (find ~/.config/fish/tokens/*.fish)
 #     source $f
 # end
+
+# Set path for Git HFCS
+set -g -x PATH /usr/local/bin $PATH
