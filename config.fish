@@ -21,7 +21,7 @@ set -g -x PATH /Library/TeX/texbin $PATH
 set -g -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
 
 # Set Editor
-set -g -x EDITOR '/usr/local/bin/atom -w'
+set -g -x EDITOR 'vim'
 
 # Suppress Greeting
 set -g -x fish_greeting ''
