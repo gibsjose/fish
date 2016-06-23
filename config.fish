@@ -6,9 +6,12 @@ set -g -x PATH ~/bin $PATH
 ### Git HFCS
 set -g -x PATH ~/bin/util.git-hfcs $PATH
 ### Utilities
-set -g -x PATH ~/bin/bash-utilities $PATH
+# set -g -x PATH ~/bin/bash-utilities $PATH
 ### Todo Python script
-set -g -x PATH ~/bin/todo $PATH
+# set -g -x PATH ~/bin/todo $PATH
+
+### CodeSonar
+set -g -x PATH $PATH /usr/local/codesonar-4.2p0/codesonar/bin
 
 ### AVR Toolchain
 #### Postfixing this to PATH so it searches this last
