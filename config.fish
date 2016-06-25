@@ -3,29 +3,26 @@ set -g -x PATH /usr/local/bin $PATH
 
 ### User Binaries
 set -g -x PATH ~/bin $PATH
-### Coverity
-set -g -x PATH ~/bin/cov-analysis/bin $PATH
 ### Utilities
-set -g -x PATH ~/bin/bash-utilities $PATH
+# set -g -x PATH ~/bin/bash-utilities $PATH
 ### Git Merge/Diff Tools
-set -g -x PATH ~/bin/git-tools $PATH
+# set -g -x PATH ~/bin/git-tools $PATH
 ### Rocket
 set -g -x PATH ~/bin/rocket/bin $PATH
 ### Todo Python script
-set -g -x PATH ~/bin/todo $PATH
+# set -g -x PATH ~/bin/todo $PATH
 
 ### AVR Toolchain
-#### Postfixing this to PATH so it searches this last
-set -g -x PATH $PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin
+set -g -x PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin $PATH
 
 ### General Coding Tools (clang, etc.)
-set -g -x PATH ~/bin/clang-analyzer $PATH
+# set -g -x PATH ~/bin/clang-analyzer $PATH
 ### Pipsi
 set -g -x PATH ~/.local/bin $PATH
 ### ROOT
-set -g -x PATH /usr/local/root/bin $PATH
+# set -g -x PATH /usr/local/root/bin $PATH
 ### Add RVM to PATH for scripting
-set -g -x PATH $HOME/.rvm/bin $PATH
+# set -g -x PATH $HOME/.rvm/bin $PATH
 ### Go
 set -g -x GOPATH $HOME/go
 set -g -x PATH $GOPATH $GOPATH/bin $PATH
