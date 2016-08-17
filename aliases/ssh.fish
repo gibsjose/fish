@@ -35,3 +35,8 @@ function torreys
     # set -x key ~/.ssh/torreys
     ssh -o ServerAliveInterval=20 $NASA_USERNAME@$NASA_HOSTNAME $argv
 end
+
+# HFCS VM
+function hfcs
+    ssh -o PubkeyAuthentication=no hfcs@hfcs-vm
+end
