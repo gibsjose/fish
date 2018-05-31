@@ -4,7 +4,7 @@ set -g -x PATH /usr/local/bin $PATH
 ### User Binaries
 set -g -x PATH ~/bin $PATH
 ### Utilities
-# set -g -x PATH ~/bin/bash-utilities $PATH
+set -g -x PATH ~/bin/utilities $PATH
 ### Git Merge/Diff Tools
 # set -g -x PATH ~/bin/git-tools $PATH
 ### Rocket
@@ -13,7 +13,7 @@ set -g -x PATH ~/bin/rocket/bin $PATH
 # set -g -x PATH ~/bin/todo $PATH
 
 ### AVR Toolchain
-set -g -x PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin $PATH
+# set -g -x PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin $PATH
 
 ### General Coding Tools (clang, etc.)
 # set -g -x PATH ~/bin/clang-analyzer $PATH
@@ -40,7 +40,7 @@ set -g -x HASHCAT '/opt/homebrew-cask/Caskroom/hashcat/2.00/hashcat-2.00'
 set -g -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
 
 # Set Editor
-set -g -x EDITOR '/usr/local/bin/atom -w'
+set -g -x EDITOR 'vim'
 
 # Suppress Greeting
 set -g -x fish_greeting ''
