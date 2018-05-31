@@ -4,7 +4,7 @@
 
 # Microamps Blog
 function microamps
-    ssh -o ServerAliveInterval=20 -c blowfish -i ~/.ssh/microamps microamps@microamps.ydns.eu $argv
+    ssh -o ServerAliveInterval=20 -c blowfish-cbc -i ~/.ssh/microamps microamps@microamps.ydns.eu $argv
 end
 
 # NASA Sunlight
