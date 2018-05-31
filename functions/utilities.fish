@@ -10,6 +10,11 @@ function setup-git
     git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
 end
 
+# lsusb replacement for macOS
+function lsusb
+    ioreg -p IOUSB -l -w 0
+end
+
 # `sizeof`: get the size of a file/directory in human readable format
 function sizeof
     if test -d $argv
