@@ -58,3 +58,8 @@ end
 
 # Set path for Git HFCS
 set -g -x PATH /usr/local/bin $PATH
+
+# Redefine fish prompt to use powerline
+function fish_prompt
+    powerline-shell --shell bare $status
+end
