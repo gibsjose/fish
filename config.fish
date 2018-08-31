@@ -38,6 +38,9 @@ set -g -x EDITOR 'vim'
 # Suppress Greeting
 set -g -x fish_greeting ''
 
+# Source the autojump setup
+[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+
 # Source aliases
 for f in (find ~/.config/fish/aliases/*.fish)
     source $f
