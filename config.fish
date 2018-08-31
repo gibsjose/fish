@@ -7,10 +7,20 @@ set -g -x PATH ~/bin $PATH
 set -g -x PATH ~/bin/utilities $PATH
 ### Git Merge/Diff Tools
 # set -g -x PATH ~/bin/git-tools $PATH
-### Rocket
-set -g -x PATH ~/bin/rocket/bin $PATH
 ### Todo Python script
 # set -g -x PATH ~/bin/todo $PATH
+
+### Rust
+set -g -x PATH ~/.cargo/bin $PATH
+
+### bin2image
+set -g -x PATH ~/bin/util.bin2image $PATH
+
+### Rocket
+set -g -x PATH ~/bin/util.rocket/bin $PATH
+
+### CodeSonar
+set -g -x PATH $PATH /usr/local/codesonar-4.2p0/codesonar/bin
 
 ### AVR Toolchain
 # set -g -x PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin $PATH
@@ -33,9 +43,6 @@ set -g -x PATH /usr/local/opt/go/libexec/bin $PATH
 ### MacTeX (pdflatex, etc.)
 set -g -x PATH /Library/TeX/texbin $PATH
 
-### Hashcat base directory
-set -g -x HASHCAT '/opt/homebrew-cask/Caskroom/hashcat/2.00/hashcat-2.00'
-
 # Brew Cask Options
 set -g -x HOMEBREW_CASK_OPTS '--appdir=/Applications'
 
@@ -45,10 +52,8 @@ set -g -x EDITOR 'vim'
 # Suppress Greeting
 set -g -x fish_greeting ''
 
-# @TODO broken now... something happened with an updated boost library
-# Colourize `less`
-# alias 'less' 'less -RN' #Enable colour and line numbers
-# set -gx LESSOPEN '| /usr/local/Cellar/source-highlight/3.1.8/bin/src-hilite-lesspipe.sh %s' # Pipes the output of the `source-highlight` less utility to less rather than the raw file
+# Source the autojump setup
+[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 
 # Source `pass` completion
 source /usr/local/share/fish/vendor_completions.d/pass.fish
@@ -64,6 +69,14 @@ for f in (find ~/.config/fish/functions/*.fish)
 end
 
 # Source API Tokens
-for f in (find ~/.config/fish/tokens/*.fish)
-    source $f
+# for f in (find ~/.config/fish/tokens/*.fish)
+#     source $f
+# end
+
+# Set path for Git HFCS
+set -g -x PATH /usr/local/bin $PATH
+
+# Redefine fish prompt to use powerline
+function fish_prompt
+    powerline-shell --shell bare $status
 end
