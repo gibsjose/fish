@@ -13,15 +13,6 @@ set -g -x PATH ~/bin/utilities $PATH
 ### Rust
 set -g -x PATH ~/.cargo/bin $PATH
 
-### bin2image
-set -g -x PATH ~/bin/util.bin2image $PATH
-
-### Rocket
-set -g -x PATH ~/bin/util.rocket/bin $PATH
-
-### CodeSonar
-set -g -x PATH $PATH /usr/local/codesonar-4.2p0/codesonar/bin
-
 ### AVR Toolchain
 # set -g -x PATH /Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin $PATH
 
