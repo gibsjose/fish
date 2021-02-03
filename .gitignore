@@ -1,6 +1,7 @@
 # Fish
 fish_history
 fish_read_history
+fish_variables
 
 # Ignore GitHub API Tokens (can't push to GH)
 tokens/
