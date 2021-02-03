@@ -136,19 +136,3 @@ end
 function wolfram
     s -p wolframalpha $argv
 end
-
-# Open development environment for RAP/FPOSE
-function develop --argument-names 'app'
-    if [ "$app" = "rap" ]
-        echo "Opening RAP code"
-        code /Volumes/Blizzard/RAP/repos/cfe/apps/rap
-    else if [ "$app" = "fpose" ]
-        echo "Opening FPOSE code"
-        code /Volumes/Blizzard/FPOSE/repos/cfe/apps/fpose
-    end
-end
-
-# Open Kaleidoscope on A.txt and B.txt pose outputs
-function pdiff
-    ksdiff ~/VirtualBox/Ubuntu\ 16.04\ LTS/Shared/A.txt ~/VirtualBox/Ubuntu\ 16.04\ LTS/Shared/B.txt
-end
