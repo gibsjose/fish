@@ -1,6 +1,10 @@
 # `cat` to `bat`
 function cat
-    command bat $argv
+    if type -q bat
+        command bat --style=plain $argv
+    else
+        command cat $argv
+    end
 end
 
 # `curl` to `httpie`
@@ -29,40 +33,33 @@ end
 
 # `ls` to `exa`
 function ls
-    command exa $argv
+    if type -q exa
+        command exa $argv
+    else
+        command ls $argv
+    end
 end
 
 # ls with git output
 function lsg
-    command exa --long --git $argv
-end
-
-# `ls` helper functions
-function la
-    ls -la $argv
+    if type -q exa
+        command exa --long --git $argv
+    else
+        command ls $argv
+    end
 end
 
 function l
     ls $argv
 end
 
-function pls
-    pwd; echo; ls $argv
-end
-
 # Push/Pop Directories
 function pud
     pushd $argv
 end
-function d
-    pud $argv
-end
 
 function pod
     popd $argv
-end
-function p
-    pod $argv
 end
 
 # Tree
@@ -71,7 +68,6 @@ function tree
 end
 
 function t --argument-names 'level'
-
     if test -n "$level"
         tree -L "$level"
     else
@@ -81,58 +77,4 @@ end
 
 function pt
     pwd; t
-end
-
-# `emacs` wrapper
-function emacsclient
-    ec $argv
-end
-
-# `s` aliases
-function search
-    s $argv
-end
-
-function stackoverflow
-    s -p stackoverflow $argv
-end
-
-function stack
-    s -p stackoverflow $argv
-end
-
-function google
-    s -p google $argv
-end
-
-function wikipedia
-    s -p wikipedia $argv
-end
-
-function wiki
-    s -p wikipedia $argv
-end
-
-function amazon
-    s -p amazon $argv
-end
-
-function github
-    s -p github $argv
-end
-
-function hackernews
-    s -p hackernews $argv
-end
-
-function hn
-    s -p hackernews $argv
-end
-
-function wolframalpha
-    s -p wolframalpha $argv
-end
-
-function wolfram
-    s -p wolframalpha $argv
 end
