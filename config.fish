@@ -4,6 +4,8 @@ set -g -x PATH ~/bin $PATH
 set -g -x PATH ~/bin/utilities $PATH
 set -g -x PATH ~/.cargo/bin $PATH
 set -g -x PATH ~/.local/bin $PATH
+set -g -x PATH ~/Library/Python/3.9/bin $PATH
+set -g -x PATH /opt/homebrew/bin $PATH
 
 # Set Editor
 set -g -x EDITOR 'vim'
@@ -26,5 +28,5 @@ end
 
 # Redefine fish prompt to use powerline
 function fish_prompt
-    ~/.local/bin/powerline-shell --shell bare $status
+    powerline-shell --shell bare $status
 end
