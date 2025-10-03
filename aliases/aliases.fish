@@ -9,12 +9,20 @@ end
 
 # `curl` to `httpie`
 function curl
-    command http $argv
+    if type -q http
+        command http $argv
+    else
+        command curl $argv
+    end
 end
 
 # `ping` to `prettyping`
 function ping
-    command prettyping --nolegend $argv
+    if type -q prettyping
+        command prettyping --nolegend $argv
+    else
+        command ping $argv
+    end
 end
 
 # `grep` Wrapper: colour
@@ -24,42 +32,35 @@ end
 
 # `top` and `htop` to `glances`
 function top
-    command glances $argv
+    if type -q glances
+        command glances $argv
+    else
+        command top $argv
+    end
 end
 
 function htop
-    command glances $argv
+    if type -q glances
+        command glances $argv
+    else
+        command htop $argv
+    end
 end
 
-# `ls` to `exa`
+# `ls` to `eza`
 function ls
-    if type -q exa
-        command exa $argv
+    if type -q eza
+        command eza $argv
     else
         command ls $argv
     end
 end
 
-# ls with git output
-function lsg
-    if type -q exa
-        command exa --long --git $argv
-    else
-        command ls $argv
+# `lg` to `lazygit`
+function lg
+    if type -q lazygit
+        command lazygit $argv
     end
-end
-
-function l
-    ls $argv
-end
-
-# Push/Pop Directories
-function pud
-    pushd $argv
-end
-
-function pod
-    popd $argv
 end
 
 # Tree
