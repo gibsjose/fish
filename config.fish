@@ -28,3 +28,8 @@ end
 function fish_prompt
     ~/.local/bin/powerline-shell --shell bare $status
 end
+
+# Set up fzf key bindings
+if type -q fzf
+    fzf --fish | source
+end
