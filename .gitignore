@@ -1,13 +1,11 @@
 # Fish
+fishd.*
 fish_history
-fish_read_history
 fish_variables
+config.local.fish
 
 # Ignore GitHub API Tokens (can't push to GH)
 tokens/
 
 # Ignore various completions (may change from version to version or be installed automatically)
 completions/docker.fish
-
-#Ignore fishd* since these are generated with a new hash on each machine
-fishd*
