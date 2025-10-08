@@ -30,3 +30,8 @@ end
 if type -q fzf
     fzf --fish | source
 end
+
+# Set up 1Password CLI completions
+if type -q op
+    op completion fish | source
+end
