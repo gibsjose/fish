@@ -31,8 +31,10 @@ for f in (find ~/.config/fish/functions/*.fish)
 end
 
 # Source any vendor completions
-for f in (find /opt/homebrew/share/fish/vendor_completions.d/*.fish)
-    source $f
+if test -d /opt/homebrew/share/fish/vendor_completions.d
+    for f in (find /opt/homebrew/share/fish/vendor_completions.d/*.fish)
+        source $f
+    end
 end
 
 # Redefine fish prompt to use powerline
