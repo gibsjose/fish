@@ -48,8 +48,10 @@ if type -q fzf
 end
 
 # Open in tmux popup if on tmux, otherwise use --height mode
-# export FZF_DEFAULT_OPTS='--height 50% --tmux bottom,50% --layout reverse --border rounded'
 set -g -x FZF_DEFAULT_OPTS '--style full --layout reverse --tmux bottom,40%'
+
+# Show a preview using bat in the file viewer, or a tree when a directory is highlighted
+set -g -x FZF_CTRL_T_OPTS '--preview "[ -d {} ] && tree -C {} || bat --color=always --style=numbers --line-range=:500 {}"'
 
 # Print tree structure in the preview window
 set -g -x FZF_ALT_C_OPTS "--walker-skip .git,node_modules,target --preview 'tree -C {}'"
