@@ -60,3 +60,8 @@ set -g -x FZF_ALT_C_OPTS "--walker-skip .git,node_modules,target --preview 'tree
 if type -q op
     op completion fish | source
 end
+
+# Set up bat completions
+if type -q bat
+    bat --completion fish | source
+end
