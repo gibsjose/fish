@@ -5,11 +5,10 @@
 # end
 
 # PATH
-set -g -x PATH /usr/local/bin $PATH
-set -g -x PATH ~/bin $PATH
-set -g -x PATH ~/bin/utilities $PATH
-set -g -x PATH ~/.cargo/bin $PATH
-set -g -x PATH ~/.local/bin $PATH
+fish_add_path --prepend --global ~/bin
+fish_add_path --prepend --global ~/bin/utilities
+fish_add_path --prepend --global ~/.cargo/bin
+fish_add_path --prepend --global ~/.local/bin
 
 # JDK Path for compilers
 set -gx CPPFLAGS "-I/opt/homebrew/opt/openjdk@21/include"
