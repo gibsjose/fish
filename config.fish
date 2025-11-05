@@ -64,3 +64,8 @@ end
 if type -q bat
     bat --completion fish | source
 end
+
+# iTerm 2 integration
+if test -e $HOME/.iterm2_shell_integration.fish
+    source $HOME/.iterm2_shell_integration.fish
+end
