@@ -19,23 +19,6 @@ set -g -x EDITOR 'vim'
 # Suppress Greeting
 set -g -x fish_greeting ''
 
-# Source aliases
-for f in (find ~/.config/fish/aliases/*.fish)
-    source $f
-end
-
-# Source custom functions
-for f in (find ~/.config/fish/functions/*.fish)
-    source $f
-end
-
-# Source any vendor completions
-if test -d /opt/homebrew/share/fish/vendor_completions.d
-    for f in (find /opt/homebrew/share/fish/vendor_completions.d/*.fish)
-        source $f
-    end
-end
-
 # Redefine fish prompt to use powerline
 function fish_prompt
     ~/.local/bin/powerline-shell --shell bare $status
@@ -68,4 +51,21 @@ end
 # iTerm 2 integration
 if test -e $HOME/.iterm2_shell_integration.fish
     source $HOME/.iterm2_shell_integration.fish
+end
+
+# Source aliases
+for f in (find ~/.config/fish/aliases/*.fish)
+    source $f
+end
+
+# Source custom functions
+for f in (find ~/.config/fish/functions/*.fish)
+    source $f
+end
+
+# Source any vendor completions
+if test -d /opt/homebrew/share/fish/vendor_completions.d
+    for f in (find /opt/homebrew/share/fish/vendor_completions.d/*.fish)
+        source $f
+    end
 end

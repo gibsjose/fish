@@ -25,14 +25,21 @@ function ping
     end
 end
 
-# `grep` Wrapper: colour
+# `grep` to `ripgrep` (rg) - Much faster grep replacement
 function grep
-    command grep --color=auto $argv
+    if type -q rg
+        command rg $argv
+    else
+        command grep --color=auto $argv
+    end
 end
 
-# `top` and `htop` to `glances`
+# `top` and `htop` to `bottom` (btm) - Modern Rust-based system monitor
+# Falls back to glances, then standard top/htop
 function top
-    if type -q glances
+    if type -q btm
+        command btm $argv
+    else if type -q glances
         command glances $argv
     else
         command top $argv
@@ -40,7 +47,9 @@ function top
 end
 
 function htop
-    if type -q glances
+    if type -q btm
+        command btm $argv
+    else if type -q glances
         command glances $argv
     else
         command htop $argv
