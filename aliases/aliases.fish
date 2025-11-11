@@ -1,78 +1,65 @@
-# `cat` to `bat`
-function cat
-    if type -q bat
-        command bat --style=plain $argv
-    else
-        command cat $argv
+################################################################################
+# Helper function to create command wrappers with fallback chain
+################################################################################
+function add_cmd_wrapper -d "Create command alias with fallback chain"
+    set -l alias_name $argv[1]
+    set -l fallbacks $argv[2..]
+
+    # Find first available command
+    set -l selected_cmd ""
+    for fallback in $fallbacks
+        # Extract command name (first word)
+        set -l cmd_name (string split -m1 ' ' -- $fallback)[1]
+        if type -q $cmd_name
+            set selected_cmd $fallback
+            break
+        end
+    end
+
+    # Fall back to original command if nothing found
+    if test -z "$selected_cmd"
+        set selected_cmd $alias_name
+    end
+
+    # Create the wrapper function
+    function $alias_name -V selected_cmd
+        set -l cmd_parts (string split ' ' -- $selected_cmd)
+        command $cmd_parts $argv
     end
 end
+
+################################################################################
+# Command aliases using add_cmd_wrapper
+################################################################################
+
+# `cat` to `bat`
+add_cmd_wrapper cat 'bat --style=plain'
 
 # `curl` to `httpie`
-function curl
-    if type -q http
-        command http $argv
-    else
-        command curl $argv
-    end
-end
+add_cmd_wrapper curl http
 
 # `ping` to `prettyping`
-function ping
-    if type -q prettyping
-        command prettyping --nolegend $argv
-    else
-        command ping $argv
-    end
-end
+add_cmd_wrapper ping 'prettyping --nolegend'
 
 # `grep` to `ripgrep` (rg) - Much faster grep replacement
-function grep
-    if type -q rg
-        command rg $argv
-    else
-        command grep --color=auto $argv
-    end
-end
+add_cmd_wrapper grep rg 'grep --color=auto'
 
 # `top` and `htop` to `bottom` (btm) - Modern Rust-based system monitor
 # Falls back to glances, then standard top/htop
-function top
-    if type -q btm
-        command btm $argv
-    else if type -q glances
-        command glances $argv
-    else
-        command top $argv
-    end
-end
-
-function htop
-    if type -q btm
-        command btm $argv
-    else if type -q glances
-        command glances $argv
-    else
-        command htop $argv
-    end
-end
+add_cmd_wrapper top btm glances
+add_cmd_wrapper htop btm glances
 
 # `ls` to `eza`
-function ls
-    if type -q eza
-        command eza $argv
-    else
-        command ls $argv
-    end
-end
+add_cmd_wrapper ls eza exa
 
-# `lg` to `lazygit`
+# `lg` to `lazygit` (no fallback - only runs if available)
 function lg
     if type -q lazygit
         command lazygit $argv
     end
 end
 
-# Tree
+# Tree (custom wrapper with default args)
 function tree
     command tree -C --noreport $argv
 end
@@ -87,4 +74,47 @@ end
 
 function pt
     pwd; t
+end
+
+# `du` to `dust` - More intuitive disk usage analyzer
+add_cmd_wrapper du dust
+
+# `ps` to `procs` - Modern process viewer with better output
+add_cmd_wrapper ps procs
+
+# `sed` to `sd` - Intuitive find & replace (Rust-based)
+# Note: sd has different syntax, so this wrapper may not work for all cases
+add_cmd_wrapper sed sd
+
+# `man` to `tldr` - Simplified man pages with examples
+add_cmd_wrapper man tldr
+
+# Network monitoring
+add_cmd_wrapper nettop bandwhich
+
+# Configure git-delta for better diffs
+if type -q delta
+    set -gx GIT_PAGER delta
+    set -gx DELTA_PAGER "less -R"
+end
+
+# Set up completions for new Rust tools
+if type -q fd
+    complete -c fd -f
+end
+
+if type -q rg
+    complete -c rg -f
+end
+
+if type -q dust
+    complete -c dust -f
+end
+
+if type -q procs
+    complete -c procs -f
+end
+
+if type -q xh
+    complete -c xh -f
 end
