@@ -63,6 +63,11 @@ for f in (find ~/.config/fish/functions/*.fish)
     source $f
 end
 
+# Source tokens (gitignored, not in version control)
+for f in (find ~/.config/fish/tokens -name "*.fish" 2>/dev/null)
+    source $f
+end
+
 # Source any vendor completions
 if test -d /opt/homebrew/share/fish/vendor_completions.d
     for f in (find /opt/homebrew/share/fish/vendor_completions.d/*.fish)
