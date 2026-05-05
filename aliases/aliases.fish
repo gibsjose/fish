@@ -59,6 +59,11 @@ function lg
     end
 end
 
+# CM Setup function for TDAQ
+function cm_setup
+    source /cvmfs/atlas.cern.ch/repo/sw/tdaq/tools/cmake_tdaq/bin/cm_setup.sh
+end
+
 # Tree (custom wrapper with default args)
 function tree
     command tree -C --noreport $argv
